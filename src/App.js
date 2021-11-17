@@ -6,9 +6,11 @@ import Home from './routes/Home/Home'
 import Cart from './routes/Cart/Cart'
 import Products from './routes/Products/Products'
 
+import './styles/App.style.scss'
+
 function App() {
   return (
-    <div className="App">
+    <>
       <MainLayout>
         <Routes>
           <Route exact path='/tau-e-commerce' element={<Home />} />
@@ -16,7 +18,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
         </Routes>
       </MainLayout>
-    </div>
+    </>
   );
 }
 
