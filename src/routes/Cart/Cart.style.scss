@@ -1,0 +1,10 @@
+.cartView {
+
+    .productsCtn {
+        //border: 1px solid red;
+    
+        width: 90%;
+        grid-template: auto / 1fr;
+        gap: 1rem;
+    }
+}

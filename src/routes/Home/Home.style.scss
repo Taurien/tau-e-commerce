@@ -1,0 +1,9 @@
+.homeView {
+    background-color: chocolate;
+    height: 100%;
+
+    >a {
+        border: 1px solid blue;
+        padding: 1rem 2rem;
+    }
+}
