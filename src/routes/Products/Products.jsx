@@ -15,28 +15,12 @@ const Products = () => {
         <div className='productsView flex flex-col'>
             <span className='self-center'>productos</span>
             <div className='productsCtn self-center grid'>
-            
             {
-                items && items.length > 0 ? (
-                items.map(item => (
-                    <div key={item.id}>
-                      <p>{item.title}</p>
-                      <p>${item.price} USD</p>
-                      <button onClick={() => AddToCart(item)}>
-                        Agregar al carrito
-                      </button>
-                    </div>
-                  ))
-                ) : (
-                    <p>cargando</p>
-                )
-            }
-            
-            {/*
                 items && items.length > 0 ? (
                     items.map( (item, index) => (
                         <Item
                         key={index}
+                        item={item}
                         id={item.id}
                         image={item.image}
                         title={item.title}
@@ -47,7 +31,7 @@ const Products = () => {
                         ) : (
                             <p>cargando</p>
                             )
-            */}
+            }
             </div>
         </div>
     )

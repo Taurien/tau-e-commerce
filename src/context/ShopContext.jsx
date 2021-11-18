@@ -6,7 +6,6 @@ const ShopProvider = ({ children }) => {
 
     const [items, setItems] = useState(null)
     const [cart, setCart] = useState([])
-    const [cartCounter, setCartCounter] = useState(0)
     const [totalpay, setTotalPay] = useState(0)
     
     useEffect(() => {
@@ -28,21 +27,18 @@ const ShopProvider = ({ children }) => {
     const AddToCart = item => {
         //console.log(item)
         setCart([...cart, item])
-        setCartCounter(cartCounter + 1)
         setTotalPay(totalpay + item.price)
     }
 
     const RemoveFromCart = product => {
         //console.log(product)
         setCart(cart.filter(item => item.id !== product.id))
-        setCartCounter(cartCounter - 1)
         setTotalPay(totalpay - product.price)
     }
 
     const data = {
         items,
         cart,
-        cartCounter,
         totalpay,
         AddToCart,
         RemoveFromCart

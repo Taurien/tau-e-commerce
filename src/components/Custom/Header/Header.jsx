@@ -9,7 +9,7 @@ import '../Header/Header.style.scss'
 
 const Header = () => {
 
-    const { cartCounter } = useContext(ShopContext)
+    const { cart } = useContext(ShopContext)
 
     return (
         <nav className='w-full inline-flex justify-between items-center'>
@@ -26,7 +26,7 @@ const Header = () => {
                     <Link to="/cart">
                         <img src={cartsvg} alt="cart" />
                         {
-                            cartCounter > 0 && <span>{cartCounter}</span>
+                            cart.length > 0 && <span>{cart.length}</span>
                         }
                     </Link></li>
             </ul>
