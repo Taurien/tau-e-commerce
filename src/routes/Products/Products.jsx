@@ -8,16 +8,17 @@ import '../Products/Products.style.scss'
 
 const Products = () => {
 
-    const { items, AddToCart } = useContext(ShopContext)
-    //console.log(items)
+    const { state } = useContext(ShopContext)
+    //console.log(state)
+    //console.log(state.items)
     
     return (
         <div className='productsView flex flex-col'>
             <span className='self-center'>productos</span>
             <div className='productsCtn self-center grid'>
             {
-                items && items.length > 0 ? (
-                    items.map( (item, index) => (
+                state && state.items?.length > 0 ? (
+                    state.items.map( (item, index) => (
                         <Item
                         key={index}
                         item={item}

@@ -10,30 +10,30 @@ const Item = (props) => {
     const location = useLocation()
     const { pathname } = location
 
-    const { AddToCart, RemoveFromCart } = useContext(ShopContext)
-
-    const AddOrRemoveItem = () => {
-        console.log(pathname)
-        if (pathname === "/products") {
-          AddToCart(item);
-        } else {
-          RemoveFromCart(item);
-        }
-    }
-
     const {
         id,
         item,
         image,
         title,
         price,
-        children
     } = props
     //console.log(item)
 
+    const { state, dispatch } = useContext(ShopContext)
+
+    const AddOrRemoveItem = () => {
+        //console.log(pathname)
+        if (pathname === "/products") {
+            dispatch({ type: 'ADD_TO_CART', payload: item })
+        } else {
+            dispatch({ type: 'DELETE_FROM_CART', payload: item })
+        }
+    }
+
+
     return (
         <div className='itemcard flex flex-col'>
-            {/*<img src={image} alt={title} />*/}
+            {/* <img src={image} alt={title} /> */}
             <p>{title}</p>
             <p>{price}</p>
             <button onClick={AddOrRemoveItem}>
