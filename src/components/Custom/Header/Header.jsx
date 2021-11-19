@@ -10,7 +10,6 @@ import '../Header/Header.style.scss'
 const Header = () => {
 
     const { state } = useContext(ShopContext)
-    //console.log(state)
 
     return (
         <nav className='w-full inline-flex justify-between items-center'>
@@ -27,7 +26,7 @@ const Header = () => {
                     <Link to="/cart">
                         <img src={cartsvg} alt="cart" />
                         {
-                            state?.cart?.length > 0 && <span>{state.cart.length}</span>
+                            state?.cart?.length > 0 && <span>{state.cart.reduce((total, item) => total + item.quantity, 0)}</span>
                         }
                     </Link></li>
             </ul>

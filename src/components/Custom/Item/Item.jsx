@@ -9,6 +9,7 @@ const Item = (props) => {
 
     const location = useLocation()
     const { pathname } = location
+    //console.log(pathname)
 
     const {
         id,
@@ -16,6 +17,7 @@ const Item = (props) => {
         image,
         title,
         price,
+        quantity,
     } = props
     //console.log(item)
 
@@ -30,14 +32,22 @@ const Item = (props) => {
         }
     }
 
+    // const cartView = () => {
+    //     pathname === '/cart' ? 
+    // }
+
 
     return (
         <div className='itemcard flex flex-col'>
             {/* <img src={image} alt={title} /> */}
             <p>{title}</p>
             <p>{price}</p>
+            {
+                quantity && <div className='inline-flex'><button>-</button><span>{quantity}</span><button>+</button></div>
+            }
             <button onClick={AddOrRemoveItem}>
-                {pathname === '/products' ? 'Buy' : 'Delete Item'}
+                {pathname === '/products' ? 'Buy' 
+                : quantity === 1 ? 'Delete Item' : 'Reduce' }
             </button>
         </div>
     )

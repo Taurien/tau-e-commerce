@@ -14,23 +14,11 @@ const Cart = () => {
 
   return (
       <div className='cartView flex flex-col'>
-        <span className='self-center'>u have to pay: ${Math.floor(state?.totalpay)} USD</span>
+        <span className='self-center'>u have to pay: ${state?.totalpay.toFixed(2)} USD</span>
+        {
+           state?.cart.length > 0 && <span>X</span>
+        }
         <div className='productsCtn self-center grid'>
-          {/*
-              cart && cart.length > 0 ? (
-              cart.map(item => (
-                  <div key={item.id}>
-                    <p>{item.title}</p>
-                    <p>${item.price} USD</p>
-                    <button onClick={() => RemoveFromCart(item)}>
-                      Delete
-                    </button>
-                  </div>
-                ))
-              ) : (
-                  <p>Empty</p>
-              )
-          */}
           {
               state && state?.cart.length > 0 ? (
                   state.cart.map( (item, index) => (
@@ -42,6 +30,7 @@ const Cart = () => {
                       title={item.title}
                       description={item.description}
                       price={item.price}
+                      quantity={item.quantity}
                       />
                 ))
               ) : (
