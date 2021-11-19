@@ -1,3 +1,5 @@
+@import '../../styles/Responsive.scss';
+
 .productsView {
 
     .productsCtn {
@@ -6,5 +8,9 @@
         width: 90%;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+
+        @include media(pc) {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 }

@@ -32,23 +32,35 @@ const Item = (props) => {
         }
     }
 
-    // const cartView = () => {
-    //     pathname === '/cart' ? 
+    const increaseItem = () => {
+        dispatch({ type: 'INCREASE_BY_ONE', payload: item })
+    }
+
+    // const itemCartView = () => {
+    //     return (
+
+    //     )
     // }
 
 
     return (
-        <div className='itemcard flex flex-col'>
-            {/* <img src={image} alt={title} /> */}
-            <p>{title}</p>
-            <p>{price}</p>
-            {
-                quantity && <div className='inline-flex'><button>-</button><span>{quantity}</span><button>+</button></div>
-            }
-            <button onClick={AddOrRemoveItem}>
-                {pathname === '/products' ? 'Buy' 
-                : quantity === 1 ? 'Delete Item' : 'Reduce' }
-            </button>
+        <div className={`itemcard ${quantity ? 'py-3 px-4 inline-flex justify-between items-center' : 'flex flex-col'}`}>
+            <div className={`itemDetails ${quantity ? 'w-full inline-flex items-center justify-evenly' : 'p-3 flex flex-col'}`}>
+                <div className='imgContainer'>
+                    <img src={image} alt={title} />
+                </div>
+                <p className={`${quantity ? 'test123' : ''}`}>{title}</p>
+                <p>$ {price}</p>
+            </div>
+            <div className={`actions ${quantity ? 'flex flex-col w-20' : '' }`}>
+                {
+                    quantity && <><button onClick={increaseItem} className='upBtn'>+</button><span>{quantity}</span></>
+                }
+                <button className={`${quantity ? 'btBtn' : 'w-full' }`} onClick={AddOrRemoveItem}>
+                    {pathname === '/products' ? 'Add to cart' 
+                    : quantity === 1 ? 'Delete Item' : '-' }
+                </button>
+            </div>
         </div>
     )
 }

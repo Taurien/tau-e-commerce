@@ -5,12 +5,11 @@ const ShopContext = createContext()
 const initialState = {
     items: null,
     cart: [],
-    totalpay: 0,
+    totalpay: 0.00,
 }
 
+
 const reducer = (state, action ) => {
-    
-    const repeteadIndex = state.cart.findIndex(item => item.id === action.payload.id)
     
     switch (action.type) {
         case 'LOAD_ITEMS':
@@ -27,8 +26,17 @@ const reducer = (state, action ) => {
                 })
                 //console.log('now im in the cart')
             } else { //If it exists. Increase the quantity of it
-                state.cart[repeteadIndex].quantity++;
+                const toAddIndex = state.cart.findIndex(item => item.id === action.payload.id)
+                state.cart[toAddIndex].quantity++;
             }
+            return {
+                ...state,
+                cart: [...state.cart],
+                totalpay: state.totalpay + action.payload.price
+            }
+        case 'INCREASE_BY_ONE':
+            const toIncreaseIndex = state.cart.findIndex(item => item.id === action.payload.id)
+            state.cart[toIncreaseIndex].quantity++
             return {
                 ...state,
                 cart: [...state.cart],
@@ -42,8 +50,9 @@ const reducer = (state, action ) => {
                     totalpay: state.totalpay - action.payload.price
                 } 
             } else if (action.payload.quantity > 1) { //If the quantity of the selected item is more than 1. Reduce it
-                state.cart[repeteadIndex].quantity--
-            }
+                const toDecreaseIndex = state.cart.findIndex(item => item.id === action.payload.id)
+                state.cart[toDecreaseIndex].quantity--
+            } 
             return {
                 ...state,
                 cart: [...state.cart],
@@ -53,7 +62,7 @@ const reducer = (state, action ) => {
             return {
                 ...state,
                 cart: [],
-                totalpay: 0
+                totalpay: 0.00
             }
         default:
             return state

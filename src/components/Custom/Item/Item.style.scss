@@ -1,13 +1,34 @@
+@import '../../../styles/Responsive.scss';
+
 .itemcard {
     border: 1px solid black;
 //    width: 14rem;
 //    height: 14rem;
+    .itemDetails {
 
-    img {
-        //width: 100%;
+        .imgContainer {
+            width: 5rem;
+        }
+
+        .test123 {
+            width: 16rem;
+        }
     }
 
-    button {
-        background-color: cadetblue;
+    .actions {
+        text-align: center;
+        
+        button {
+            background-color: cadetblue;
+            font-weight: bold;
+        }
+        
+        .upBtn{
+
+        }
+        .btBtn{
+
+        }
+
     }
 }

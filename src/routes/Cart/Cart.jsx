@@ -8,16 +8,24 @@ import '../Cart/Cart.style.scss'
 
 const Cart = () => {
 
-  const { state } = useContext(ShopContext)
+  const { state, dispatch } = useContext(ShopContext)
   //console.log(state?.totalpay)
   //console.log(state?.cart)
 
+  const clearCart = () => {
+    dispatch({ type: 'CLEAR_CART'})
+  }
+  
+  //console.log(state?.totalpay.toFixed(2));
+
   return (
       <div className='cartView flex flex-col'>
-        <span className='self-center'>u have to pay: ${state?.totalpay.toFixed(2)} USD</span>
-        {
-           state?.cart.length > 0 && <span>X</span>
-        }
+        <div className='self-center w-6/12 inline-flex justify-around'>
+          <span>u have to pay: ${ state?.cart.length === 0 ? '0.00' : state?.totalpay.toFixed(2)} USD</span>
+          {
+            state?.cart.length > 0 && <span onClick={clearCart}>X</span>
+          }
+        </div>
         <div className='productsCtn self-center grid'>
           {
               state && state?.cart.length > 0 ? (
