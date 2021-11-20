@@ -32,12 +32,12 @@ const Home = () => {
     // const test = state?.items.sort(() => Math.random() - Math.random()).slice(0, 5)
 
     return (
-        <div className='homeView flex flex-col'>
-            <p className='self-center'>entrada</p>
-            <div className='w-full inline-flex justify-evenly'>
+        <div className='homeView flex flex-col items-center'>
+            <p className=''>entrada</p>
+            <div className='entryItems w-full inline-flex justify-evenly'>
                 {entry()}
             </div>
-            <Link className='self-center' to="/products">click here</Link>
+            <Link className='' to="/products">click here</Link>
         </div>
     )
 }

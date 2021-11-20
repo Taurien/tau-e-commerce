@@ -28,12 +28,16 @@ const Item = (props) => {
         if (pathname === "/products") {
             dispatch({ type: 'ADD_TO_CART', payload: item })
         } else {
-            dispatch({ type: 'DELETE_FROM_CART', payload: item })
+            dispatch({ type: 'DECREASE_N_DELETE_FROM_CART', payload: item })
         }
     }
 
     const increaseItem = () => {
         dispatch({ type: 'INCREASE_BY_ONE', payload: item })
+    }
+
+    const deleteAllItem = () => {
+        dispatch({ type: 'DELETE_AT_ALL', payload: item })
     }
 
     // const itemCartView = () => {
@@ -44,7 +48,10 @@ const Item = (props) => {
 
 
     return (
-        <div className={`itemcard ${quantity ? 'py-3 px-4 inline-flex justify-between items-center' : 'flex flex-col'}`}>
+        <div className={`itemcard ${quantity ? 'py-3 px-4 inline-flex items-center' : 'flex flex-col'}`}>
+            {
+                quantity && <span onClick={deleteAllItem}>X</span>
+            }
             <div className={`itemDetails ${quantity ? 'w-full inline-flex items-center justify-evenly' : 'p-3 flex flex-col'}`}>
                 <div className='imgContainer'>
                     <img src={image} alt={title} />

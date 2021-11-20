@@ -1,7 +1,9 @@
 @import '../../../styles/Responsive.scss';
 
 .itemcard {
-    border: 1px solid black;
+    background-color: #ffffff;
+    border-radius: 2rem;
+    overflow: hidden;
 //    width: 14rem;
 //    height: 14rem;
     .itemDetails {

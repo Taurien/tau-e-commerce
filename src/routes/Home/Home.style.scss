@@ -1,6 +1,18 @@
+@import '../../styles/Responsive.scss';
+
 .homeView {
-    background-color: rgb(117, 133, 141);
     height: 100%;
+
+    
+    .entryItems {
+        background-color: #ffffff;
+        border-radius: 2rem;
+        width: 80%;
+
+        @include media(pc) {
+            width: 80%;
+        }
+    }
 
     >a {
         border: 1px solid blue;

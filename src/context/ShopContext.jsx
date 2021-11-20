@@ -42,7 +42,7 @@ const reducer = (state, action ) => {
                 cart: [...state.cart],
                 totalpay: state.totalpay + action.payload.price
             }
-        case 'DELETE_FROM_CART':
+        case 'DECREASE_N_DELETE_FROM_CART':
             if (action.payload.quantity === 1) { // If there's only one unit of the selected item in the cart. Remove completely from cart
                 return {
                     ...state,
@@ -57,6 +57,13 @@ const reducer = (state, action ) => {
                 ...state,
                 cart: [...state.cart],
                 totalpay: state.totalpay - action.payload.price
+            }
+        case 'DELETE_AT_ALL':
+            const subTotal = action.payload.price * action.payload.quantity // price of item * n times of the same product in cart
+            return {
+                ...state,
+                cart : state.cart.filter(item => item.id !== action.payload.id), // to erase it
+                totalpay: state.totalpay - subTotal
             }
         case 'CLEAR_CART':
             return {
