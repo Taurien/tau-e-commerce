@@ -62,19 +62,26 @@ const Item = (props) => {
             </>
         )
     }
-
+    // { width: "100%", marginLeft: "2.5%", marginTop: "1rem" }
 
     return (
-        <div className={`itemcard ${quantity ? 'py-3 px-4 inline-flex items-center' : 'flex flex-col'}`}>
+        <div className={`itemcard ${quantity ? 'py-3 px-4 inline-flex items-center' : 'flex flex-col justify-between'}`} style={pathname === '/products' ? { height: "18rem"} : {}}>
             {
                 quantity && <button onClick={deleteAllItem} ><img src={xCircle} alt='' /></button>
             }
-            <div className={`itemDetails ${quantity ? 'w-full inline-flex items-center justify-evenly' : 'p-3 flex flex-col'}`}>
-                <div className='imgContainer'>
+            <div className={
+                `itemDetails 
+                ${quantity ? 'w-full inline-flex items-center justify-evenly' : 'p-3 flex flex-col'}
+                ${pathname === '/tau-e-commerce' ? 'justify-center' :
+                pathname === '/products' ? 'justify-between' : '' }
+                `}
+                style={pathname !== '/cart' ? { height: "100%"} : {}}
+            >
+                <div className='imgContainer self-center'>
                     <img src={image} alt={title} />
                 </div>
                 <p className={`${quantity ? 'test123' : ''}`}>{title}</p>
-                <p>$ {price}</p>
+                <p className={`${pathname === '/tau-e-commerce' ? 'self-center' : ''}`}>$ {price}</p>
             </div>
             {
                 pathname !== '/tau-e-commerce' && actions()

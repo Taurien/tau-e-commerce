@@ -2,12 +2,14 @@
 
 .homeView {
     height: 100%;
-
+    
     
     .entryItems {
-        background-color: #ffffff;
+        background-color: #94b6ff;
+        padding: 2rem 0.5rem;
         border-radius: 2rem;
-        width: 80%;
+        width: 94%;
+        height: 15rem;
 
         @include media(pc) {
             width: 80%;

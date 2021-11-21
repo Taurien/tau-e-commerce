@@ -20,8 +20,9 @@ function App() {
           <Route exact path='tau-e-commerce' element={<Home />} />
           <Route path='products' element={<Products />} />
           <Route path='cart' element={<Cart />} >
-            <Route path='checkout' element={<Checkout />} />
+            {/* checkout */}
           </Route>
+            <Route path='checkout' element={<Checkout />} />
         </Routes>
       </MainLayout>
     </ShopProvider>

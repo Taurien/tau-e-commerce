@@ -55,7 +55,7 @@ const Cart = () => {
           }
         </div>
         {
-          state?.cart.length > 0 && <span onClick={Checkout}>Checkout</span>
+          state?.cart.length > 0 && <button onClick={Checkout} className='self-center'>Checkout</button>
         }
         
       </div>

@@ -1,21 +1,25 @@
 @import '../../../styles/Responsive.scss';
 
 .itemcard {
+    // border: 1px solid red;
     background-color: #ffffff;
-    border-radius: 2rem;
+    border-radius: 1.4rem;
     overflow: hidden;
-//    width: 14rem;
-//    height: 14rem;
-
+    //    width: 14rem;
+    //    height: 14rem;
+    
     button {
         width: 2rem;
     }
-
-
+    
+    
     .itemDetails {
-
+        
         .imgContainer {
-            width: 6rem;
+            
+            img {
+                width: 5rem;// modify this
+            }
         }
 
         .test123 {
@@ -25,6 +29,7 @@
 
     .actions {
         text-align: center;
+        
         // height: 100%;
 
         span {
