@@ -6,23 +6,43 @@
     overflow: hidden;
 //    width: 14rem;
 //    height: 14rem;
+
+    button {
+        width: 2rem;
+    }
+
+
     .itemDetails {
 
         .imgContainer {
-            width: 5rem;
+            width: 6rem;
         }
 
         .test123 {
-            width: 16rem;
+            width: 15rem;
         }
     }
 
     .actions {
         text-align: center;
-        
+        // height: 100%;
+
+        span {
+            padding: 0.3rem 0;
+        }
+
         button {
+            width: 100%;
+            padding: 0.4rem 0;
+            display: flex;
+            justify-content: center;
+
             background-color: cadetblue;
             font-weight: bold;
+
+            img {
+                width: 1.5rem;
+            }
         }
         
         .upBtn{

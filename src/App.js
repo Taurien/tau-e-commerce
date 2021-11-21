@@ -7,6 +7,7 @@ import MainLayout from "./layouts/MainLayout";
 import Home from './routes/Home/Home'
 import Cart from './routes/Cart/Cart'
 import Products from './routes/Products/Products'
+import Checkout from './routes/Checkout/Checkout'
 
 import './styles/App.style.scss'
 
@@ -16,9 +17,11 @@ function App() {
     <ShopProvider>
       <MainLayout>
         <Routes>
-          <Route exact path='/tau-e-commerce' element={<Home />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/cart' element={<Cart />} />
+          <Route exact path='tau-e-commerce' element={<Home />} />
+          <Route path='products' element={<Products />} />
+          <Route path='cart' element={<Cart />} >
+            <Route path='checkout' element={<Checkout />} />
+          </Route>
         </Routes>
       </MainLayout>
     </ShopProvider>
