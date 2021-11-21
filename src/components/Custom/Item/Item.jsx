@@ -74,7 +74,7 @@ const Item = (props) => {
                 `itemDetails
                 ${pathname !== '/cart' && 'h-full'} 
                 ${quantity ? 'w-full inline-flex items-center justify-evenly' : 'p-3 flex flex-col'}
-                ${pathname === '/tau-e-commerce' ? 'justify-center' :
+                ${pathname === '/tau-e-commerce' && pathname === '/tau-e-commerce/' ? 'justify-center' :
                 pathname === '/products' ? 'justify-between' : '' }
                 `}
             >
@@ -82,7 +82,7 @@ const Item = (props) => {
                     <img src={image} alt={title} />
                 </div>
                 <p className={`${quantity ? 'test123' : ''}`}>{title}</p>
-                <p className={`${pathname === '/tau-e-commerce' ? 'self-center' : ''}`}>$ {price}</p>
+                <p className={`${pathname === '/tau-e-commerce' && pathname === '/tau-e-commerce/' ? 'self-center' : ''}`}>$ {price}</p>
             </div>
             {
                 pathname !== '/tau-e-commerce' && pathname !== '/tau-e-commerce/' && actions()
