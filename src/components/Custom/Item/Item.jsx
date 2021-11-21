@@ -70,12 +70,12 @@ const Item = (props) => {
                 quantity && <button onClick={deleteAllItem} ><img src={xCircle} alt='' /></button>
             }
             <div className={
-                `itemDetails 
+                `itemDetails
+                ${pathname !== '/cart' && 'h-full'} 
                 ${quantity ? 'w-full inline-flex items-center justify-evenly' : 'p-3 flex flex-col'}
                 ${pathname === '/tau-e-commerce' ? 'justify-center' :
                 pathname === '/products' ? 'justify-between' : '' }
                 `}
-                style={pathname !== '/cart' ? { height: "100%"} : {}}
             >
                 <div className='imgContainer self-center'>
                     <img src={image} alt={title} />
@@ -84,7 +84,7 @@ const Item = (props) => {
                 <p className={`${pathname === '/tau-e-commerce' ? 'self-center' : ''}`}>$ {price}</p>
             </div>
             {
-                pathname !== '/tau-e-commerce' && actions()
+                pathname !== '/tau-e-commerce' && pathname !== '/tau-e-commerce/' && actions()
             }
         </div>
     )
