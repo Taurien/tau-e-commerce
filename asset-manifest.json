@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/tau-e-commerce/static/css/main.ba12ecfa.chunk.css",
-    "main.js": "/tau-e-commerce/static/js/main.fe4e08a5.chunk.js",
-    "main.js.map": "/tau-e-commerce/static/js/main.fe4e08a5.chunk.js.map",
+    "main.css": "/tau-e-commerce/static/css/main.49cf4ef1.chunk.css",
+    "main.js": "/tau-e-commerce/static/js/main.b8b0befe.chunk.js",
+    "main.js.map": "/tau-e-commerce/static/js/main.b8b0befe.chunk.js.map",
     "runtime-main.js": "/tau-e-commerce/static/js/runtime-main.eb8d37b2.js",
     "runtime-main.js.map": "/tau-e-commerce/static/js/runtime-main.eb8d37b2.js.map",
     "static/js/2.69a98394.chunk.js": "/tau-e-commerce/static/js/2.69a98394.chunk.js",
@@ -10,15 +10,20 @@
     "static/js/3.15202bcb.chunk.js": "/tau-e-commerce/static/js/3.15202bcb.chunk.js",
     "static/js/3.15202bcb.chunk.js.map": "/tau-e-commerce/static/js/3.15202bcb.chunk.js.map",
     "index.html": "/tau-e-commerce/index.html",
-    "static/css/main.ba12ecfa.chunk.css.map": "/tau-e-commerce/static/css/main.ba12ecfa.chunk.css.map",
+    "static/css/main.49cf4ef1.chunk.css.map": "/tau-e-commerce/static/css/main.49cf4ef1.chunk.css.map",
     "static/js/2.69a98394.chunk.js.LICENSE.txt": "/tau-e-commerce/static/js/2.69a98394.chunk.js.LICENSE.txt",
     "static/media/cart.93770646.svg": "/tau-e-commerce/static/media/cart.93770646.svg",
-    "static/media/logo.631fbf4e.svg": "/tau-e-commerce/static/media/logo.631fbf4e.svg"
+    "static/media/icons8-delete-bin.d0dbde46.svg": "/tau-e-commerce/static/media/icons8-delete-bin.d0dbde46.svg",
+    "static/media/icons8-trash.addb94a5.svg": "/tau-e-commerce/static/media/icons8-trash.addb94a5.svg",
+    "static/media/logo.631fbf4e.svg": "/tau-e-commerce/static/media/logo.631fbf4e.svg",
+    "static/media/minus.0c8f8ef4.svg": "/tau-e-commerce/static/media/minus.0c8f8ef4.svg",
+    "static/media/plus.dec889e8.svg": "/tau-e-commerce/static/media/plus.dec889e8.svg",
+    "static/media/x-circle.a4735472.svg": "/tau-e-commerce/static/media/x-circle.a4735472.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.eb8d37b2.js",
     "static/js/2.69a98394.chunk.js",
-    "static/css/main.ba12ecfa.chunk.css",
-    "static/js/main.fe4e08a5.chunk.js"
+    "static/css/main.49cf4ef1.chunk.css",
+    "static/js/main.b8b0befe.chunk.js"
   ]
 }
