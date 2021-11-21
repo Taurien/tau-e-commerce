@@ -46,6 +46,7 @@ const Item = (props) => {
     }
 
     const actions = () => {
+        console.log(pathname)
         return (
             <>
             <div className={`actions ${quantity ? 'w-20 flex flex-col overflow-hidden rounded-lg' : '' }`}>
