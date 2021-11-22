@@ -36,7 +36,12 @@
             img {
                 // border: 1px solid blue;
                 width: 4rem;//
+
+                @include media(pc) {
+                    width: 5rem;
+                }
             }
+            
         }
 
         .imgCtnProducts {
@@ -47,10 +52,17 @@
             justify-content: center;
             // border: 1px solid red;
 
+            
+
             img {
                 // width: 5rem;
             }
         }
+        
+        p:nth-child(2) {
+            margin: 0.4rem 0;
+        }
+
         .test123 {
             width: 14rem;
         }

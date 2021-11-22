@@ -14,7 +14,7 @@ const Products = () => {
     
     return (
         <div className='productsView flex flex-col'>
-            <span className='self-center'>productos</span>
+            {/* <span className='self-center'>productos</span> */}
             <div className='productsCtn self-center grid'>
             {
                 state && state.items?.length > 0 ? (

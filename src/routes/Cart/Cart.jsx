@@ -29,7 +29,7 @@ const Cart = () => {
   return (
       <div className='cartView flex flex-col'>
         <div className='partialPrice self-center w-6/12 inline-flex justify-around items-center'>
-          <span>u have to pay: ${ state?.cart.length === 0 ? '0.00' : state?.totalpay.toFixed(2)} USD</span>
+          <span>u have to pay: $ { state?.cart.length === 0 ? '0.00' : state?.totalpay.toFixed(2)} USD</span>
           {
             state?.cart.length > 0 && <button onClick={clearCart}><img src={Bin} alt='' /></button>
           }

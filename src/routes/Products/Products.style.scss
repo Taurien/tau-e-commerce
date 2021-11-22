@@ -4,13 +4,14 @@
 
     .productsCtn {
         //border: 1px solid red;
-    
+        margin: 2rem 0;
         width: 90%;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
 
         @include media(pc) {
             grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
         }
     }
 }
