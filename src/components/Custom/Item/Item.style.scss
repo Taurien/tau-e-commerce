@@ -14,17 +14,47 @@
     
     
     .itemDetails {
+
+        img {
+            width: 5rem;
+        }
         
-        .imgContainer {
-            
+        .imgCtnDefault {
+            // border: 1px solid magenta;
             img {
-                width: 5rem;// modify this
+                width: 5rem;
+            }
+           
+        }
+
+        .imgCtn {
+            // border: 1px solid blue;
+            height: 70%;//
+            display: flex;
+            align-items: center;
+            // margin: 0 0.2rem;
+            img {
+                // border: 1px solid blue;
+                width: 4rem;//
             }
         }
 
-        .test123 {
-            width: 15rem;
+        .imgCtnProducts {
+            width: 100%;
+            height: 10rem;//media
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // border: 1px solid red;
+
+            img {
+                // width: 5rem;
+            }
         }
+        .test123 {
+            width: 14rem;
+        }
+        
     }
 
     .actions {

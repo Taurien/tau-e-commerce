@@ -33,7 +33,7 @@ const Home = () => {
 
     return (
         <div className='homeView flex flex-col items-center'>
-            <p className=''>entrada</p>
+            <p className=''>banner</p>
             <div className='entryItems w-full inline-flex justify-evenly'>
                 {entry()}
             </div>

@@ -46,7 +46,7 @@ const Item = (props) => {
     }
 
     const actions = () => {
-        console.log(pathname)
+        // console.log(pathname)
         return (
             <>
             <div className={`actions ${quantity ? 'w-20 flex flex-col overflow-hidden rounded-lg' : '' }`}>
@@ -66,7 +66,7 @@ const Item = (props) => {
     // { width: "100%", marginLeft: "2.5%", marginTop: "1rem" }
 
     return (
-        <div className={`itemcard ${quantity ? 'py-3 px-4 inline-flex items-center' : 'flex flex-col justify-between'}`} style={pathname === '/products' ? { height: "18rem"} : {}}>
+        <div className={`itemcard ${quantity ? 'py-3 px-4 inline-flex items-center' : 'flex flex-col justify-between'}`}>
             {
                 quantity && <button onClick={deleteAllItem} ><img src={xCircle} alt='' /></button>
             }
@@ -75,10 +75,15 @@ const Item = (props) => {
                 ${pathname !== '/cart' && 'h-full'} 
                 ${quantity ? 'w-full inline-flex items-center justify-evenly' : 'p-3 flex flex-col'}
                 ${(pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/') ? 'justify-center' :
-                pathname === '/products' ? 'justify-between' : '' }
+                   pathname === '/products' ? 'justify-between' : '' }
                 `}
             >
-                <div className='imgContainer self-center'>
+                <div className={
+                    `self-center
+                    ${(pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/') ? 'imgCtn' :
+                       pathname === '/products' ? 'imgCtnProducts' : 'imgCtnDefault' }
+                    `}
+                >
                     <img src={image} alt={title} />
                 </div>
                 <p className={`${quantity ? 'test123' : ''}`}>{title}</p>
