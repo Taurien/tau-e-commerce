@@ -66,9 +66,10 @@ const Item = (props) => {
     // { width: "100%", marginLeft: "2.5%", marginTop: "1rem" }
 
     return (
-        <div className={`itemcard ${quantity ? 'py-3 px-4 inline-flex items-center' : 'flex flex-col justify-between'}`}>
+        <div className={`itemcard relative ${quantity ? 'py-3 px-4 inline-flex items-center' : 'flex flex-col justify-between'}`}>
+            {quantity && pathname === '/checkout' && <span className='absolute'>{quantity}</span>}
             {
-                quantity && <button onClick={deleteAllItem} ><img src={xCircle} alt='' /></button>
+                quantity && pathname !== '/checkout' && <button onClick={deleteAllItem} ><img src={xCircle} alt='' /></button>
             }
             <div className={
                 `itemDetails
@@ -90,7 +91,7 @@ const Item = (props) => {
                 <p className={`${(pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/') ? 'self-center' : ''}`}>$ {price}</p>
             </div>
             {
-                pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/' ? null : actions()
+                pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/' || pathname === '/checkout' ? null : actions()
             }
         </div>
     )

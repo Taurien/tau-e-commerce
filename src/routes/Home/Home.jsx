@@ -2,7 +2,10 @@ import React, { useContext }from 'react'
 import { Link } from 'react-router-dom'
 import ShopContext from '../../context/ShopContext'
 
+import Banner from '../../assets/banner.jpg'
 import Item from '../../components/Custom/Item/Item'
+import Loader from '../../components/Custom/Loader/Loader'
+
 
 import '../Home/Home.style.scss'
 
@@ -24,20 +27,17 @@ const Home = () => {
                 />
                 ))
         } else {
-            return <><p>magic incoming</p></>
+            return <><Loader /></>
         }
     }
 
-
-    // const test = state?.items.sort(() => Math.random() - Math.random()).slice(0, 5)
-
     return (
         <div className='homeView flex flex-col items-center'>
-            <p className=''>banner</p>
-            <div className='entryItems w-full inline-flex justify-evenly'>
+            <img className='banner' src={Banner} alt="" />
+            <div className={`entryItems w-full inline-flex justify-evenly ${state?.items === null && 'items-center'}`}>
                 {entry()}
             </div>
-            <Link className='' to="/products">click here</Link>
+            <Link className='' to="/products">See more</Link>
         </div>
     )
 }

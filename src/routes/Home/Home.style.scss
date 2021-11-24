@@ -1,14 +1,23 @@
 @import '../../styles/Responsive.scss';
 
 .homeView {
-    height: 100%;
+    height: calc(100vh - 79.17px);
+    justify-content: space-evenly;
     
+    .banner {
+        width: 80%;
+        overflow: hidden;
+        border-radius: 2rem;
+        @include media(pc) {
+            width: 40%;
+        }
+    }
     
     .entryItems {
-        background-color: #94b6ff;
+        width: 94%;
+        background-color: #5ea0f7;
         padding: 2rem 0.5rem;
         border-radius: 2rem;
-        width: 94%;
         height: 15rem;
 
         @include media(pc) {
@@ -17,7 +26,10 @@
     }
 
     >a {
-        border: 1px solid blue;
+        border-radius: 2rem;
+        background-color: #7CB2F8;
         padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: bold;
     }
 }

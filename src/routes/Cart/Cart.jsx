@@ -28,11 +28,14 @@ const Cart = () => {
 
   return (
       <div className='cartView flex flex-col'>
-        <div className='partialPrice self-center w-6/12 inline-flex justify-around items-center'>
-          <span>u have to pay: $ { state?.cart.length === 0 ? '0.00' : state?.totalpay.toFixed(2)} USD</span>
-          {
-            state?.cart.length > 0 && <button onClick={clearCart}><img src={Bin} alt='' /></button>
-          }
+        <div className='summary self-center w-6/12 flex flex-col'>
+          <h2 className='self-center'>Order Summary</h2>
+          <div className='partialPrice inline-flex justify-around items-center'>
+            <span>Total: $ { state?.cart.length === 0 ? '0.00' : state?.totalpay.toFixed(2)} USD</span>
+            {
+              state?.cart.length > 0 && <button onClick={clearCart}><img src={Bin} alt='' /></button>
+            }
+          </div>
         </div>
         <div className='productsCtn self-center grid'>
           {
@@ -44,23 +47,21 @@ const Cart = () => {
                     id={item.id}
                     image={item.image}
                     title={item.title}
-                    description={item.description}
                     price={item.price}
                     quantity={item.quantity}
                     />
               ))
             ) : (
-                <p>Empty</p>
+                <span className='text-center'>Cart Empty</span>
             )
           }
         </div>
         {
-          state?.cart.length > 0 && <button onClick={Checkout} className='self-center'>Checkout</button>
+          state?.cart.length > 0 && <button onClick={Checkout} className='self-center'><b>BUY ({state.cart.reduce((total, item) => total + item.quantity, 0)})</b></button>
         }
         
       </div>
   )
 }
-//navigate({ pathname: `/user/${login}` })
 
 export default Cart
