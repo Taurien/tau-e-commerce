@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState,useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ShopContext from '../../../context/ShopContext'
 
@@ -10,9 +10,25 @@ import '../Header/Header.style.scss'
 const Header = () => {
 
     const { state } = useContext(ShopContext)
+    const [ scrolled, setScrolled ]= useState(false);
+    
+    const handleScroll= () => {
+        const offset = window.scrollY;
+        // console.log(offset)
+        if(offset > 1 ){
+        setScrolled(true);
+        }
+        else{
+        setScrolled(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll',handleScroll)
+      })
 
     return (
-        <nav className='w-full inline-flex justify-between items-center'>
+        <nav className={`${scrolled && 'scrolled'} w-full inline-flex justify-between items-center`}>
             <div className='logo inline-flex items-center'>
                 <Link to="/tau-e-commerce">
                     <img src={logo} alt="Logo" />
