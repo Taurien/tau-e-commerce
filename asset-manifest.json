@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/tau-e-commerce/static/css/main.3f6d5450.chunk.css",
-    "main.js": "/tau-e-commerce/static/js/main.e22b5fcf.chunk.js",
-    "main.js.map": "/tau-e-commerce/static/js/main.e22b5fcf.chunk.js.map",
-    "runtime-main.js": "/tau-e-commerce/static/js/runtime-main.bfa8ef39.js",
-    "runtime-main.js.map": "/tau-e-commerce/static/js/runtime-main.bfa8ef39.js.map",
-    "static/js/2.69a98394.chunk.js": "/tau-e-commerce/static/js/2.69a98394.chunk.js",
-    "static/js/2.69a98394.chunk.js.map": "/tau-e-commerce/static/js/2.69a98394.chunk.js.map",
-    "static/js/3.edb736fd.chunk.js": "/tau-e-commerce/static/js/3.edb736fd.chunk.js",
-    "static/js/3.edb736fd.chunk.js.map": "/tau-e-commerce/static/js/3.edb736fd.chunk.js.map",
+    "main.css": "/tau-e-commerce/static/css/main.d3f55f29.chunk.css",
+    "main.js": "/tau-e-commerce/static/js/main.f3c647fc.chunk.js",
+    "main.js.map": "/tau-e-commerce/static/js/main.f3c647fc.chunk.js.map",
+    "runtime-main.js": "/tau-e-commerce/static/js/runtime-main.12c5dc39.js",
+    "runtime-main.js.map": "/tau-e-commerce/static/js/runtime-main.12c5dc39.js.map",
+    "static/js/2.3b8b513b.chunk.js": "/tau-e-commerce/static/js/2.3b8b513b.chunk.js",
+    "static/js/2.3b8b513b.chunk.js.map": "/tau-e-commerce/static/js/2.3b8b513b.chunk.js.map",
+    "static/js/3.1422bb35.chunk.js": "/tau-e-commerce/static/js/3.1422bb35.chunk.js",
+    "static/js/3.1422bb35.chunk.js.map": "/tau-e-commerce/static/js/3.1422bb35.chunk.js.map",
     "index.html": "/tau-e-commerce/index.html",
-    "static/css/main.3f6d5450.chunk.css.map": "/tau-e-commerce/static/css/main.3f6d5450.chunk.css.map",
-    "static/js/2.69a98394.chunk.js.LICENSE.txt": "/tau-e-commerce/static/js/2.69a98394.chunk.js.LICENSE.txt",
+    "static/css/main.d3f55f29.chunk.css.map": "/tau-e-commerce/static/css/main.d3f55f29.chunk.css.map",
+    "static/js/2.3b8b513b.chunk.js.LICENSE.txt": "/tau-e-commerce/static/js/2.3b8b513b.chunk.js.LICENSE.txt",
     "static/media/banner.b709c87b.jpg": "/tau-e-commerce/static/media/banner.b709c87b.jpg",
     "static/media/cart.93770646.svg": "/tau-e-commerce/static/media/cart.93770646.svg",
     "static/media/icons8-delete-bin.d0dbde46.svg": "/tau-e-commerce/static/media/icons8-delete-bin.d0dbde46.svg",
@@ -23,9 +23,9 @@
     "static/media/x-circle.a4735472.svg": "/tau-e-commerce/static/media/x-circle.a4735472.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.bfa8ef39.js",
-    "static/js/2.69a98394.chunk.js",
-    "static/css/main.3f6d5450.chunk.css",
-    "static/js/main.e22b5fcf.chunk.js"
+    "static/js/runtime-main.12c5dc39.js",
+    "static/js/2.3b8b513b.chunk.js",
+    "static/css/main.d3f55f29.chunk.css",
+    "static/js/main.f3c647fc.chunk.js"
   ]
 }
