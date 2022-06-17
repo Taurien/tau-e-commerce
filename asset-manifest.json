@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tau-e-commerce/static/css/main.d3f55f29.chunk.css",
-    "main.js": "/tau-e-commerce/static/js/main.f3c647fc.chunk.js",
-    "main.js.map": "/tau-e-commerce/static/js/main.f3c647fc.chunk.js.map",
+    "main.js": "/tau-e-commerce/static/js/main.f100bb9c.chunk.js",
+    "main.js.map": "/tau-e-commerce/static/js/main.f100bb9c.chunk.js.map",
     "runtime-main.js": "/tau-e-commerce/static/js/runtime-main.12c5dc39.js",
     "runtime-main.js.map": "/tau-e-commerce/static/js/runtime-main.12c5dc39.js.map",
     "static/js/2.3b8b513b.chunk.js": "/tau-e-commerce/static/js/2.3b8b513b.chunk.js",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.12c5dc39.js",
     "static/js/2.3b8b513b.chunk.js",
     "static/css/main.d3f55f29.chunk.css",
-    "static/js/main.f3c647fc.chunk.js"
+    "static/js/main.f100bb9c.chunk.js"
   ]
 }
