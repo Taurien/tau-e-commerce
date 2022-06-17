@@ -45,54 +45,65 @@ const Item = (props) => {
         dispatch({ type: 'DELETE_AT_ALL', payload: item })
     }
 
-    const actions = () => {
+    const Actions = () => {
         // console.log(pathname)
         return (
             <>
-            <div className={`actions ${quantity ? 'w-20 flex flex-col overflow-hidden rounded-lg' : '' }`}>
+            <div className={`actions text-center ${quantity && 'w-14 flex flex-col overflow-hidden rounded-lg'}`}>
                 {
-                    quantity && <><button onClick={increaseItem} className='upBtn'><img src={Plus} alt='' /></button><span>{quantity}</span></>
+                    quantity && 
+                    <>
+                        <button onClick={increaseItem} className=''>
+                            <img src={Plus} alt='' />
+                        </button>
+                        <span className='py-1 border-r-2 border-l-2 border-black'>{quantity}</span>
+                    </>
                 }
-                <button className={`${quantity ? 'btBtn' : 'w-full' }`} onClick={AddOrRemoveItem}>
+                <button className='' onClick={AddOrRemoveItem}>
                     {
-                        pathname === '/products' ? 'Add to cart' 
-                        : quantity === 1 ? <><img src={DeleteBin} alt='' /></> : <><img src={Minus} alt='' /></> 
+                        pathname === '/products'
+                        ? 'Add to cart' 
+                        : quantity === 1 ? <><img src={DeleteBin} alt='' /></> : <><img className='' src={Minus} alt=''/></> 
                     }
                 </button>
             </div>
             </>
         )
     }
-    // { width: "100%", marginLeft: "2.5%", marginTop: "1rem" }
 
     return (
-        <div className={`itemcard relative ${quantity ? 'py-3 px-4 inline-flex items-center' : 'flex flex-col justify-between'}`}>
-            {quantity && pathname === '/checkout' && <span className='absolute'>{quantity}</span>}
+        <div className={`itemcard relative ${quantity ? 'p-2 inline-flex items-center' : 'flex flex-col justify-between'} bg-white rounded-md overflow-hidden`}>
+
             {
-                quantity && pathname !== '/checkout' && <button onClick={deleteAllItem} ><img src={xCircle} alt='' /></button>
+                quantity && pathname === '/checkout' && 
+                <span className='absolute top-0 left-1 w-7 h-7 bg-red-400 text-white rounded-full flex items-center justify-center'>{quantity}</span>
             }
-            <div className={
-                `itemDetails
-                ${pathname !== '/cart' && 'h-full'} 
-                ${quantity ? 'w-full inline-flex items-center justify-evenly' : 'p-3 flex flex-col'}
-                ${(pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/') ? 'justify-center' :
-                   pathname === '/products' ? 'justify-between' : '' }
+
+            {
+                quantity && pathname === '/cart' && 
+                <button onClick={deleteAllItem} >
+                    <img src={xCircle} alt='' />
+                </button>
+            }
+            <div className={`itemDetails
+                    ${pathname !== '/cart' && 'h-full'}
+                    ${quantity ? 'w-full inline-flex items-center justify-evenly' : 'p-3 flex flex-col'}
+                    ${ (pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/' || pathname === '/products') && 'justify-between'}
                 `}
             >
-                <div className={
-                    `self-center
-                    ${(pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/') ? 'imgCtn' :
-                       pathname === '/products' ? 'imgCtnProducts' : 'imgCtnDefault' }
+                <div className={`self-center
+                        ${(pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/')
+                            ? 'imgCtn h-4/6 flex items-center'
+                            : pathname === '/products' && 'imgCtnProducts w-full h-40 flex items-center justify-center'}
                     `}
                 >
-                    <img src={image} alt={title} />
+                    <img className='w-16' src={image} alt={title} />
                 </div>
-                <p className={`${quantity ? 'test123' : ''}`}>{title}</p>
-                <p className={`${(pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/') ? 'self-center' : ''}`}>$ {price}</p>
+                <p className={`${quantity && 'desktop:w-60 w-32'} font-medium italic`}>{title}</p>
+                <p className={`${(pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/') && 'self-center'}`}>$ {price}</p>
             </div>
-            {
-                pathname === '/tau-e-commerce' || pathname === '/tau-e-commerce/' || pathname === '/checkout' ? null : actions()
-            }
+
+            {(pathname === '/cart' || pathname === '/products') && <Actions />}
         </div>
     )
 }

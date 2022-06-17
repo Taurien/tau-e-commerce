@@ -7,23 +7,21 @@ import Item from '../../components/Custom/Item/Item'
 import Loader from '../../components/Custom/Loader/Loader'
 
 
-import '../Home/Home.style.scss'
-
 const Home = () => {
     
     const { state } = useContext(ShopContext)
     //console.log(state.items)
 
-    const entry = () => {
+    const Entry = () => {
         if (state?.items) {
             const randomItems = state?.items.sort(() => Math.random() - Math.random()).slice(0, 5)
             //console.log(randomItems)
             return randomItems.map( (item, index) => (
                 <Item
-                key={index}
-                id={item.id}
-                image={item.image}
-                price={item.price}
+                    key={index}
+                    id={item.id}
+                    image={item.image}
+                    price={item.price}
                 />
                 ))
         } else {
@@ -32,12 +30,12 @@ const Home = () => {
     }
 
     return (
-        <div className='homeView flex flex-col items-center'>
-            <img className='banner' src={Banner} alt="" />
-            <div className={`entryItems w-full inline-flex justify-evenly ${state?.items === null && 'items-center'}`}>
-                {entry()}
+        <div className='homeView w-full flex flex-col items-center'>
+            <img className='banner desktop:w-5/12 w-9/12 my-4 rounded-lg overflow-hidden' src={Banner} alt="" />
+            <div className={`entryItems desktop:w-8/12 w-11/12 p-4 grid desktop:grid-flow-col mobile:grid-cols-2 gap-3 ${state?.items === null && 'items-center'} bg-blue-400 rounded-md`}>
+                <Entry />
             </div>
-            <Link className='' to="/products">See more</Link>
+            <Link className='my-2 px-3 py-1 font-bold rounded bg-blue-300' to="/products">See more</Link>
         </div>
     )
 }

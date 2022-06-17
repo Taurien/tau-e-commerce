@@ -5,7 +5,6 @@ import ShopContext from '../../../context/ShopContext'
 import logo from '../../../logo.svg'
 import cartsvg from '../../../assets/cart.svg'
 
-import '../Header/Header.style.scss'
 
 const Header = () => {
 
@@ -15,12 +14,8 @@ const Header = () => {
     const handleScroll= () => {
         const offset = window.scrollY;
         // console.log(offset)
-        if(offset > 1 ){
-        setScrolled(true);
-        }
-        else{
-        setScrolled(false);
-        }
+        if(offset > 1 ) setScrolled(true);
+        else setScrolled(false);
     }
 
     useEffect(() => {
@@ -28,23 +23,28 @@ const Header = () => {
       })
 
     return (
-        <nav className={`${scrolled && 'scrolled'} w-full inline-flex justify-between items-center`}>
-            <div className='logo inline-flex items-center'>
-                <Link to="/tau-e-commerce">
-                    <img src={logo} alt="Logo" />
-                </Link>
-                <h1>Tau-Express</h1>
-            </div>
-            <ul className='menu inline-flex justify-between items-center'>
-                <li><Link to="/tau-e-commerce">Home</Link></li>
-                <li><Link to="/products">Store</Link></li>
-                <li id='cartCounter'>
-                    <Link to="/cart">
-                        <img src={cartsvg} alt="cart" />
+        <nav className={`${scrolled && 'sticky top-0 left-0 z-10'} w-full inline-flex justify-between items-center bg-white px-4 py-2 border-b-2 border-blue-600 `}>
+            <Link to="/tau-e-commerce">
+                <div className='inline-flex items-center'>
+                    <img className='w-10' src={logo} alt="Logo" />
+                    <h1 className='font-bold'>Tau-Express</h1>
+                </div>
+            </Link>
+
+            <ul className='inline-flex justify-between items-center font-semibold'>
+                <li className='mr-3'><Link to="/tau-e-commerce">Home</Link></li>
+                <li className='mr-3'><Link to="/products">Store</Link></li>
+                <li className=''>
+                    <Link className='block relative' to="/cart">
+                        <img className=' w-6' src={cartsvg} alt="cart" />
                         {
-                            state?.cart?.length > 0 && <span>{state.cart.reduce((total, item) => total + item.quantity, 0)}</span>
+                            state?.cart?.length > 0 && 
+                            <span className='w-6 h-6 absolute bottom-3 left-2 bg-red-400 text-center rounded-full'>
+                                {state.cart.reduce((total, item) => total + item.quantity, 0)}
+                            </span>
                         }
-                    </Link></li>
+                    </Link>
+                </li>
             </ul>
         </nav>
     )

@@ -1,82 +1,11 @@
 @import '../../../styles/Responsive.scss';
 
 .itemcard {
-    // border: 1px solid red;
-    background-color: #ffffff;
-    border-radius: 1.4rem;
-    overflow: hidden;
-    //    width: 14rem;
-    //    height: 14rem;
-    
     button {
         width: 2rem;
     }
     
-    
-    .itemDetails {
-
-        img {
-            width: 5rem;
-        }
-        
-        .imgCtnDefault {
-            // border: 1px solid magenta;
-            img {
-                width: 5rem;
-            }
-           
-        }
-
-        .imgCtn {
-            // border: 1px solid blue;
-            height: 70%;//
-            display: flex;
-            align-items: center;
-            // margin: 0 0.2rem;
-            img {
-                // border: 1px solid blue;
-                width: 4rem;//
-
-                @include media(pc) {
-                    width: 5rem;
-                }
-            }
-            
-        }
-
-        .imgCtnProducts {
-            width: 100%;
-            height: 10rem;//media
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            // border: 1px solid red;
-
-            
-
-            img {
-                // width: 5rem;
-            }
-        }
-        
-        p:nth-child(2) {
-            margin: 0.4rem 0;
-        }
-
-        .test123 {
-            width: 14rem;
-        }
-        
-    }
-
     .actions {
-        text-align: center;
-        
-        // height: 100%;
-
-        span {
-            padding: 0.3rem 0;
-        }
 
         button {
             width: 100%;
@@ -91,29 +20,5 @@
                 width: 1.5rem;
             }
         }
-        
-        .upBtn{
-
-        }
-        .btBtn{
-
-        }
-
-    }
-
-    span:nth-child(1) {
-        background-color: black;
-        color: white;
-        width: 2.2rem;
-        height: 2.2rem;
-        border-radius: 50%;
-        
-        z-index: 2;
-        top: 0;
-        left: 5px;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }

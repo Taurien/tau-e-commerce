@@ -5,7 +5,6 @@ import Item from '../../components/Custom/Item/Item'
 
 import payment from '../../assets/payment.png'
 
-import '../Checkout/Checkout.style.scss'
 
 const Checkout = () => {
 
@@ -32,8 +31,8 @@ const Checkout = () => {
                         }
             </div>
             <br />
-            <span>TOTAL: $ {state?.totalpay.toFixed(2)} USD</span>
-            <span>Payment Methods</span>
+            <span className='text-2xl'>TOTAL: $ {state?.totalpay.toFixed(2)} USD</span>
+            <span className='text-xl'>Payment Methods</span>
             <img src={payment} alt="" />
         </div>
     )
