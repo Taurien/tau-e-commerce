@@ -10,6 +10,8 @@ const Header = () => {
 
     const { state } = useContext(ShopContext)
     const [ scrolled, setScrolled ]= useState(false);
+
+    const itemsInCar = state.cart.reduce((total, item) => total + item.quantity, 0)
     
     const handleScroll= () => {
         const offset = window.scrollY;
@@ -20,7 +22,7 @@ const Header = () => {
 
     useEffect(() => {
         window.addEventListener('scroll',handleScroll)
-      })
+    })
 
     return (
         <nav className={`${scrolled && 'sticky top-0 left-0 z-10'} w-full inline-flex justify-between items-center bg-white px-4 py-2 border-b-2 border-blue-600 `}>
@@ -40,7 +42,7 @@ const Header = () => {
                         {
                             state?.cart?.length > 0 && 
                             <span className='w-6 h-6 absolute bottom-3 left-2 bg-red-400 text-center rounded-full'>
-                                {state.cart.reduce((total, item) => total + item.quantity, 0)}
+                                {itemsInCar}
                             </span>
                         }
                     </Link>
